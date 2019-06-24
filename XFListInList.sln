@@ -7,7 +7,12 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFListInList.Android", "XFL
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFListInList.iOS", "XFListInList.iOS\XFListInList.iOS.csproj", "{62412280-FBAE-4256-BAC7-A86228CE85FB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "XFListInList", "XFListInList\XFListInList.csproj", "{3857DBA9-6882-4FB4-92EA-E6AECF56A62A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "XFListInList", "XFListInList\XFListInList.csproj", "{3857DBA9-6882-4FB4-92EA-E6AECF56A62A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Other Files", "Other Files", "{09097A96-3F7E-4B3B-881A-54540EF3CB29}"
+	ProjectSection(SolutionItems) = preProject
+		README.md = README.md
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
