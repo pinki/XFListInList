@@ -15,6 +15,7 @@
     <StackLayout>
         <ListView x:Name="ItemsListView"
                 ItemsSource="{Binding Items}"
+                IsGroupingEnabled="True"
                 VerticalOptions="FillAndExpand"
                 HasUnevenRows="True"
                 RefreshCommand="{Binding LoadItemsCommand}"
@@ -32,10 +33,11 @@
                     <x:String>Sixth Item</x:String>
                 </x:Array>
             </d:ListView.ItemsSource>
-            <ListView.ItemTemplate>
+
+            <ListView.GroupHeaderTemplate>
                 <DataTemplate>
                     <ViewCell>
-                        <StackLayout Padding="10">
+                        <StackLayout>
                             <Editor Text="{Binding Text}" 
                                 d:Text="{Binding .}"
                                 Style="{DynamicResource ListItemTextStyle}" 
@@ -44,20 +46,17 @@
                                 d:Text="Item description"
                                 Style="{DynamicResource ListItemDetailTextStyle}"
                                 FontSize="13" />
-
-                            <ListView ItemsSource="{Binding SubItems}"
-                                      RowHeight="100">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout Padding="10">
-                                                <Label Text="{Binding Id}" />
-                                                <Editor Text="{Binding Name}" />
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
+                        </StackLayout>
+                    </ViewCell>
+                </DataTemplate>
+            </ListView.GroupHeaderTemplate>
+            
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Padding="10">
+                            <Label Text="{Binding Id}" />
+                            <Editor Text="{Binding Name}" />
                         </StackLayout>
                     </ViewCell>
                 </DataTemplate>

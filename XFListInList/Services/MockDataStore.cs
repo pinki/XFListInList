@@ -12,27 +12,24 @@ namespace XFListInList.Services {
             items = new List<Item>();
             var mockItems = new List<Item>
             {
-                new Item {
-                    Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description.",
-                    SubItems = {
+                new Item (new SubItem[] {
                         new SubItem { Id = Guid.NewGuid().ToString(), Name = "First subitem" },
                         new SubItem { Id = Guid.NewGuid().ToString(), Name = "Second subitem" }
-                    }
+                }) {
+                    Id = Guid.NewGuid().ToString(), Text = "First item", Description="This is an item description."
                 },
-                new Item {
-                    Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description.",
-                    SubItems = {
+                new Item (new SubItem[] {
                         new SubItem { Id = Guid.NewGuid().ToString(), Name = "Third subitem" }
-                    }
+                }) {
+                    Id = Guid.NewGuid().ToString(), Text = "Second item", Description="This is an item description."
                 },
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Third item", Description="This is an item description." },
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Fourth item", Description="This is an item description." },
-                new Item {
-                    Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description.",
-                    SubItems = {
+                new Item (new SubItem[] {
                         new SubItem { Id = Guid.NewGuid().ToString(), Name = "Fourth subitem" },
                         new SubItem { Id = Guid.NewGuid().ToString(), Name = "Fifth subitem" }
-                    }
+                }) {
+                    Id = Guid.NewGuid().ToString(), Text = "Fifth item", Description="This is an item description."
                 },
                 new Item { Id = Guid.NewGuid().ToString(), Text = "Sixth item", Description="This is an item description." }
             };
