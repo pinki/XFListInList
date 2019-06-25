@@ -11,3 +11,6 @@ Each item can have subitems. These are also being displayed inside a nested List
 If you try to Edit the 4th or 5th subitem's entry (you have to scroll down a bit) then the keyboard doesn't show up.
 
 When you try to edit a regular item (not a subitem) and then tap on a subitem, then the keyboard will be displayed.
+
+
+[Xamarin.Forms forum thread](https://forums.xamarin.com/discussion/comment/379591)
