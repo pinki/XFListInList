@@ -12,57 +12,36 @@
         <ToolbarItem Text="Add" Clicked="AddItem_Clicked" />
     </ContentPage.ToolbarItems>
 
-    <StackLayout>
-        <ListView x:Name="ItemsListView"
-                ItemsSource="{Binding Items}"
-                VerticalOptions="FillAndExpand"
-                HasUnevenRows="True"
-                RefreshCommand="{Binding LoadItemsCommand}"
-                IsPullToRefreshEnabled="true"
-                IsRefreshing="{Binding IsBusy, Mode=OneWay}"
-                CachingStrategy="RetainElement"
-                ItemSelected="OnItemSelected">
-            <d:ListView.ItemsSource>
-                <x:Array Type="{x:Type x:String}">
-                    <x:String>First Item</x:String>
-                    <x:String>Second Item</x:String>
-                    <x:String>Third Item</x:String>
-                    <x:String>Forth Item</x:String>
-                    <x:String>Fifth Item</x:String>
-                    <x:String>Sixth Item</x:String>
-                </x:Array>
-            </d:ListView.ItemsSource>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <StackLayout Padding="10">
-                            <Editor Text="{Binding Text}" 
-                                d:Text="{Binding .}"
-                                Style="{DynamicResource ListItemTextStyle}" 
-                                FontSize="16" />
-                            <Editor Text="{Binding Description}" 
-                                d:Text="Item description"
-                                Style="{DynamicResource ListItemDetailTextStyle}"
-                                FontSize="13" />
+    <CollectionView ItemsSource="{Binding Items}"
+                    ItemSizingStrategy="MeasureAllItems"
+                    SelectionMode="None">
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+                <StackLayout Padding="10">
+                    <Editor Text="{Binding Text}" 
+                            d:Text="{Binding .}"
+                            FontSize="16" />
+                    <Editor Text="{Binding Description}" 
+                            d:Text="Item description"
+                            FontSize="13" />
 
-                            <ListView ItemsSource="{Binding SubItems}"
-                                      RowHeight="100">
-                                <ListView.ItemTemplate>
-                                    <DataTemplate>
-                                        <ViewCell>
-                                            <StackLayout Padding="10">
-                                                <Label Text="{Binding Id}" />
-                                                <Editor Text="{Binding Name}" />
-                                            </StackLayout>
-                                        </ViewCell>
-                                    </DataTemplate>
-                                </ListView.ItemTemplate>
-                            </ListView>
-                        </StackLayout>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
-    </StackLayout>
-
+                    <ListView ItemsSource="{Binding SubItems}"
+                              SelectionMode="None"
+                              VerticalScrollBarVisibility="Never"
+                              RowHeight="85">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <StackLayout Padding="10">
+                                        <Label Text="{Binding Id}" />
+                                        <Editor Text="{Binding Name}" />
+                                    </StackLayout>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
 </ContentPage>
