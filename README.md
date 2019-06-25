@@ -15,4 +15,4 @@ When you try to edit a regular item (not a subitem) and then tap on a subitem, t
 
 [Xamarin.Forms forum thread](https://forums.xamarin.com/discussion/comment/379591)
 
-You workarounds ([suggested by AllessandroCaliaro](https://forums.xamarin.com/discussion/comment/379600/#Comment_379600)) in the [GroupedList branch](https://github.com/pinki/XFListInList/tree/GroupedList) and in the [CollectionView branch](https://github.com/pinki/XFListInList/tree/CollectionView).
+You can find two workarounds ([suggested by AllessandroCaliaro](https://forums.xamarin.com/discussion/comment/379600/#Comment_379600)) in the [GroupedList branch](https://github.com/pinki/XFListInList/tree/GroupedList) and in the [CollectionView branch](https://github.com/pinki/XFListInList/tree/CollectionView).
